@@ -434,7 +434,7 @@ fileExists:
         LAUNCHER_OPTIONS.vmode = parseVMode(arg->value);
       } else if (strcmp(OPTION_MODE, arg->arg) == 0) {
         // Reset MODE_ALL to MODE_NONE if mode flag exists
-        if (LAUNCHER_OPTIONS.mode == MODE_ALL)
+        if ((LAUNCHER_OPTIONS.mode | MODE_MX4SIO) == MODE_ALL)
           LAUNCHER_OPTIONS.mode = MODE_NONE;
         LAUNCHER_OPTIONS.mode |= parseMode(arg->value);
       } else if (strcmp(OPTION_UDPBD_IP, arg->arg) == 0) {
